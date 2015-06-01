@@ -4,7 +4,7 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT (see the LICENSE file)
  */
 
-namespace MyCLabs\Enum;
+namespace Mcustiel\Enum;
 
 /**
  * Base Enum class
@@ -25,6 +25,11 @@ abstract class Enum
     protected $value;
 
     /**
+     * @var string
+     */
+    protected $key;
+
+    /**
      * Store existing constants in a static cache per object.
      *
      * @var array
@@ -41,10 +46,13 @@ abstract class Enum
     public function __construct($value)
     {
         if (!$this->isValid($value)) {
-            throw new \UnexpectedValueException("Value '$value' is not part of the enum " . get_called_class());
+            throw new \UnexpectedValueException(
+                "Value '{$value}' is not part of the enum " . get_called_class()
+            );
         }
 
         $this->value = $value;
+        $this->key = $this->search($value);
     }
 
     /**
@@ -62,7 +70,7 @@ abstract class Enum
      */
     public function getKey()
     {
-        return self::search($this->value);
+        return $this->key;
     }
 
     /**
@@ -70,7 +78,7 @@ abstract class Enum
      */
     public function __toString()
     {
-        return (string) $this->value;
+        return $this->getKey();
     }
 
     /**

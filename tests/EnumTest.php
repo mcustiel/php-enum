@@ -4,7 +4,7 @@
  * @license http://www.opensource.org/licenses/mit-license.php MIT (see the LICENSE file)
  */
 
-namespace MyCLabs\Tests\Enum;
+namespace Mcustiel\Tests\Enum;
 
 /**
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
@@ -45,7 +45,7 @@ class EnumTest extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(
             '\UnexpectedValueException',
-            'Value \'' . $value . '\' is not part of the enum MyCLabs\Tests\Enum\EnumFixture'
+            'Value \'' . $value . '\' is not part of the enum Mcustiel\Tests\Enum\EnumFixture'
         );
 
         new EnumFixture($value);
@@ -73,9 +73,9 @@ class EnumTest extends \PHPUnit_Framework_TestCase
 
     public function toStringProvider() {
         return array(
-            array(EnumFixture::FOO, new EnumFixture(EnumFixture::FOO)),
-            array(EnumFixture::BAR, new EnumFixture(EnumFixture::BAR)),
-            array((string) EnumFixture::NUMBER, new EnumFixture(EnumFixture::NUMBER)),
+            array('FOO', new EnumFixture(EnumFixture::FOO)),
+            array('BAR', new EnumFixture(EnumFixture::BAR)),
+            array('NUMBER', new EnumFixture(EnumFixture::NUMBER)),
         );
     }
 
@@ -149,7 +149,7 @@ class EnumTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \BadMethodCallException
      * @expectedExceptionMessage No static method or enum constant 'UNKNOWN' in class
-     *                           UnitTest\MyCLabs\Enum\Enum\EnumFixture
+     *                           UnitTest\Mcustiel\Enum\Enum\EnumFixture
      */
     public function testBadStaticAccess()
     {
