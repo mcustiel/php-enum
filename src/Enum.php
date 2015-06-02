@@ -1,5 +1,6 @@
 <?php
 /**
+ * @link    http://github.com/mcustiel/php-enum
  * @link    http://github.com/myclabs/php-enum
  * @license http://www.opensource.org/licenses/mit-license.php MIT (see the LICENSE file)
  */
@@ -14,6 +15,7 @@ namespace Mcustiel\Enum;
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
  * @author Daniel Costa <danielcosta@gmail.com>
  * @author Mirosław Filip <mirfilip@gmail.com>
+ * @author Mariano Custiel <jmcustiel@gmail.com>
  */
 abstract class Enum
 {
@@ -160,7 +162,8 @@ abstract class Enum
     }
 
     /**
-     * Returns a value when called statically like so: MyEnum::SOME_VALUE() given SOME_VALUE is a class constant
+     * Returns a value when called statically like so: MyEnum::SOME_VALUE()
+     * given SOME_VALUE is a class constant
      *
      * @param string $name
      * @param array  $arguments
@@ -174,6 +177,8 @@ abstract class Enum
             return new static(constant("static::$name"));
         }
 
-        throw new \BadMethodCallException("No static method or enum constant '$name' in class " . get_called_class());
+        throw new \BadMethodCallException(
+            "No static method or enum constant '$name' in class " . get_called_class()
+        );
     }
 }
