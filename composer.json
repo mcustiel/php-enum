@@ -1,6 +1,7 @@
 {
-    "name" : "myclabs/php-enum",
+    "name" : "mcustiel/php-enum",
     "type" : "library",
+    "version": "1.0.0",
     "description" : "PHP Enum implementation",
     "keywords" : [
         "enum"
