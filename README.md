@@ -1,4 +1,6 @@
-# My version of php-enum, the Enum implementation inspired from SplEnum
+# php-enum:
+
+My version of php-enum, the Enum implementation inspired from SplEnum.
 
 This is the same php-enum that you can get from: [MyCLabs/php-enum](https://github.com/myclabs/php-enum). I only changed the functionality of __toString() to return the key, since in my opinion the enum should no represent a value directly but just to be an abstraction that represents something specified by the key (inspired by Java enum). I you don't care about this, I recommend you to use the original one.
 
