@@ -1,6 +1,8 @@
-# PHP Enum implementation inspired from SplEnum
+# My version of php-enum, the Enum implementation inspired from SplEnum
 
-[![Build Status](https://travis-ci.org/myclabs/php-enum.png?branch=master)](https://travis-ci.org/myclabs/php-enum) [![Latest Stable Version](https://poser.pugx.org/myclabs/php-enum/version.png)](https://packagist.org/packages/myclabs/php-enum) [![Total Downloads](https://poser.pugx.org/myclabs/php-enum/downloads.png)](https://packagist.org/packages/myclabs/php-enum)
+This is the same php-enum that you can get from: [MyCLabs/php-enum](https://github.com/myclabs/php-enum). I only changed the functionality of __toString() to return the key, since in my opinion the enum should no represent a value directly but just to be an abstraction that represents something specified by the key (inspired by Java enum). I you don't care about this, I recommend you to use the original one.
+
+Now, the original description from [MyCLabs](https://github.com/myclabs):
 
 ## Why?
 
@@ -54,9 +56,9 @@ function setAction(Action $action) {
 ## Documentation
 
 - `__construct()` The constructor checks that the value exist in the enum
-- `__toString()` You can `echo $myValue`, it will display the enum value (value of the constant)
+- `__toString()` You can `echo $myValue`, it will display the the name of the constant
 - `getValue()` Returns the current value of the enum
-- `getKey()` Returns the key of the current value on Enum
+- `getKey()` Returns the key (name of the constant) of the current value on Enum
 
 Static methods:
 
